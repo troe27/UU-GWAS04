@@ -80,7 +80,7 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
   After hearing of your success in winning the departmental funding, one of the senior PI's in your department offers to match ( i.e. double) that funding ( Under the condition that *they* will be the last author, of course.). How would this additional money change your quest for (statistical) power?
 
 ##### 1.2.3
-  While finishing up your experimental design, your postdocs approach you with an idea for a method that would drastically improve precision for the your phenotypes, reducing the noise in the variance and there potentially raising the variance attributable to the genotypes. This could increase your predicted effectsizes (beta) to 0.03, but would use up all your excess funding. Assuming it works, would it be worth it?
+  While finishing up your experimental design, your postdocs approach you with an idea for a method that would drastically improve precision for measuring the phenotypes, reducing the noise in the variance and there potentially raising the fraction of the variance attributable to the genotypes. This could increase your predicted effectsizes (beta) to 0.03, but would use up all your excess funding. Assuming it works, would it be worth it?
 
 ### Exercise 2: Population structure
 
