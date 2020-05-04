@@ -1,19 +1,19 @@
 # TOC
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-- [TOC](#toc)
-		- [Topics today:](#topics-today)
-			- [Downloads:](#downloads)
-	- [Exercise 1: Power Calculations](#exercise-1-power-calculations)
-			- [Exercise 1.1](#exercise-11)
-			- [Exercise 1.2](#exercise-12)
-				- [1.2.1](#121)
-				- [1.2.2](#122)
-				- [1.2.3](#123)
-		- [Exercise 2: Population structure](#exercise-2-population-structure)
-				- [2.1](#21)
-				- [2.2](#22)
-				- [2.3](#23)
+- [TOC](#toc)  
+		- [Topics today:](#topics-today)  
+			- [Downloads:](#downloads)  
+	- [Exercise 1: Power Calculations](#exercise-1-power-calculations)  
+			- [Exercise 1.1](#exercise-11)  
+			- [Exercise 1.2](#exercise-12)  
+				- [1.2.1](#121)  
+				- [1.2.2](#122)  
+				- [1.2.3](#123)  
+		- [Exercise 2: Population structure](#exercise-2-population-structure)  
+				- [2.1](#21)  
+				- [2.2](#22)  
+				- [2.3](#23)  
 
 <!-- /TOC -->
 ### Topics today:
