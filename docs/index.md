@@ -19,7 +19,6 @@ $n$ is the number of observations
 $r^{2}$ is the pairwise correlation between the causal marker and the genotyped marker.
 $$
 
-![NCP = n \times r^2 \times 2 \times MAF \times (1-MAF) \times \beta^2](https://render.githubusercontent.com/render/math?math=NCP%20%3D%20n%20%5Ctimes%20r%5E2%20%5Ctimes%202%20%5Ctimes%20MAF%20%5Ctimes%20(1-MAF)%20%5Ctimes%20%5Cbeta%5E2)
 
 # Exercise 2: Population structure
 
