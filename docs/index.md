@@ -85,7 +85,8 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
 ### Exercise 2: Population structure
 
 ##### 2.1
-For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it. If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take these toy examples of 4 individuals and 6 markers: can you find the causative marker for the "diseased"-phenotype in both examples?
+For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it.  
+If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take these toy-examples of 4 individuals and 6 markers: can you find the causative marker for the "diseased"-phenotype in both examples?
 
 ![example1](figures/toy1.png)  
 ![example2](figures/toy2.png)  
@@ -94,14 +95,14 @@ For the second exercise today, we will try to have a look at how population stru
 
 
 
-probably not for the latter. but what if we added another individual?
+ And if we added another individual to the second example?
 
 ![example3](figures/toy3.png)
 
-The second example would be an example where population structure and phenotype are perfectly correlated.this makes it inpossible to disentangle the two. however, we could rescue the study by increasing the diversity of our panel
+The second example would be an case where population structure and phenotype are perfectly correlated. This makes it inpossible to disentangle the two. However, we were able rescue the study by increasing the diversity of our panel (adding another sample)
 
 ##### 2.2
-For real-world populations and quantitative traits however, even partial population structure can be very problematic, and lead to a lot of false positive associations. To have a closer look at this, we are going to work with a simulated dataset where we know the exact nature of the population structure.
+For real-world populations and quantitative traits however, even partial population structure can be very problematic and lead to a lot of false positive associations. To have a closer look at this, we are going to work with a simulated dataset where we know the exact nature of the population structure.
 
 We have stored the data in a .Rdata file, which you can get here:
 <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">gwas_pop_str_sim.RData</a>
@@ -163,10 +164,10 @@ One of the essential plots to do whenever checking the results of your associati
 
 
 
-We have added a function for this <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/scripts/plot_QQ_function.R">plot_QQ_function.R</a>.
+We have added a function for this here: <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/scripts/plot_QQ_function.R">plot_QQ_function.R</a>.
 you can either paste this into your R notebook/script or keep it as a separate file in your working directory and load the function with `` source("/path/to/plot_QQ_function.R")``
 
-either way, you can then plot them like so:
+either way, you can then plot it like so:
 ```R
 plot_qq(pval_ori,20000) # 20000 is the numbers of markers
 ```
