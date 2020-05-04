@@ -23,7 +23,6 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
 #### Exercise 1.1
   translate the equation into an R function!
 
-
   <details><summary>tips</summary>
   <p>
 
@@ -60,10 +59,14 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
 
 # Exercise 2: Population structure
 
-For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it. If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take this toy example of 4 individuals and 6 markers: can you find the causative marker for the "diseased"-phenotype?
+For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it. If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take these toy examples of 4 individuals and 6 markers: can you find the causative marker for the "diseased"-phenotype in both examples?
 
 ![example1](figures/toy1.png)  
 ![example2](figures/toy2.png)  
+
+
+
+
 
 probably not for the latter. but what if we added another individual?
 
