@@ -20,27 +20,27 @@ where
 *MAF* is the minor allele frequency, and  
 ![\beta](https://render.githubusercontent.com/render/math?math=%5Cbeta) is the effect size of an allele on the phenotype in standard deviation units.
 
- ## Exercise 1.1
+#### Exercise 1.1
   translate the equation into an R function!
 
   ### tips
   ### walkthrough
 
-## Exercise 1.2
+#### Exercise 1.2
   You're planning an exciting study on a physiologically relevant trait that for sure will be your breakthrough to fame and fortune!
   However, due to the dire funding situation you keep finding yourself in, you will have to be smart about the experimental setup.
   based on similar studies on related traits as well as initial estimations of the heritability of your trait, you estimate that you need to be able to detect variants with a a minor allele frequency down to 0.25, that explain about 15% of the variance, i.e. having an effect size of about 0.02 standard deviations.
 
-### 1.2.1
+##### 1.2.1
   So far you've budgeted for phenotyping and genotyping of about 2000 individuals. Now, to your surprise, some departmental funding has come through.
   Should you invest this windfall into a higher marker-density phenotyping that raises your average marker-rsquare from 0.8 to 0.99, or add another 500 individuals?
 
-### 1.2.2
+##### 1.2.2
   After hearing of your success in winning the departmental funding, one of the senior PI's in your department offers to match ( i.e. double) that funding ( Under the condition that *they* will be the last author, of course.). How would this additional money change your quest for (statistical) power?
 
-### 1.2.3
+##### 1.2.3
   While finishing up your experimental design, your postdocs approach you with an idea for a method that would drastically improve precision for the your phenotypes, reducing the noise in the variance and there potentially raising the variance attributable to the genotypes. This could increase your predicted effectsizes (beta) to 0.03, but would use up all your excess funding. Assuming it works, would it be worth it?
-  
+
 # Exercise 2: Population structure
 
 
