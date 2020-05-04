@@ -23,7 +23,6 @@ where
 #### Exercise 1.1
   translate the equation into an R function!
 
-  ### tips
   ### walkthrough
 
 #### Exercise 1.2
@@ -97,7 +96,7 @@ ggplot(data=pval1)+
   geom_abline(, color='red', slope = 0, intercept =-log10(significance_threshold))
 
 ```
-Do you have markers above the significance threshold? how many?
+Do you have markers above the significance threshold? how many, and how are they distributed?
 
 
 One of the essential plots to do whenever checking the results of your association is a [Q-Q plot](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot), a quantile-quantile plot that plots the P-values against the expected probability distribution.
@@ -109,6 +108,7 @@ either way, you can then plot them like so:
 ```R
 plot_qq(pval_ori,20000)
 ```
+
 As you can see, the pvalues of our association are much higher than expected, which is due to the population structure.
 This can also be called genomic inflation, and a "genomic inflation factor" is sometimes calculated in order to correct this.
 
@@ -120,8 +120,11 @@ pop_str<-gwas_pop_str_sim$relatedness
 for(l in 1:m){
   pval_cor[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]+pop_str))$coefficients[2,4]
 }
+## plot qqplot
+plot_qq(pval_cor,20000)
+
 ```
+when you plot the qqplot with the new p values, you can see that they are much more in line with the expected distribution, which is a sign that we successfully controlled for the population structure!
 
-
-
-# QQ-plots & Genomic inflation
+What do you see when you plot the new pvalues on top of the old ones?
+Do you see as many significant hits?
