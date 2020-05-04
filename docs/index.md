@@ -1,10 +1,35 @@
 # TOC
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
+- [TOC](#toc)
+		- [Topics today:](#topics-today)
+			- [Downloads:](#downloads)
+	- [Exercise 1: Power Calculations](#exercise-1-power-calculations)
+			- [Exercise 1.1](#exercise-11)
+			- [Exercise 1.2](#exercise-12)
+				- [1.2.1](#121)
+				- [1.2.2](#122)
+				- [1.2.3](#123)
+		- [Exercise 2: Population structure](#exercise-2-population-structure)
+				- [2.1](#21)
+				- [2.2](#22)
+				- [2.3](#23)
+
+<!-- /TOC -->
 ### Topics today:
  - Internalise the concept of statistical power:  
 *how likely are we to make [type II errors](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) given our experimental design?*
 
  - Confounders: avoiding Type I errors arising from population structure
+
+
+#### Downloads:
+
+<a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">gwas_pop_str_sim.RData</a>
+
+<a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/scripts/plot_QQ_function.R">plot_QQ_function.R</a>.
+
+
 
 ## Exercise 1: Power Calculations
 
@@ -57,8 +82,9 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
 ##### 1.2.3
   While finishing up your experimental design, your postdocs approach you with an idea for a method that would drastically improve precision for the your phenotypes, reducing the noise in the variance and there potentially raising the variance attributable to the genotypes. This could increase your predicted effectsizes (beta) to 0.03, but would use up all your excess funding. Assuming it works, would it be worth it?
 
-# Exercise 2: Population structure
+### Exercise 2: Population structure
 
+##### 2.1
 For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it. If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take these toy examples of 4 individuals and 6 markers: can you find the causative marker for the "diseased"-phenotype in both examples?
 
 ![example1](figures/toy1.png)  
@@ -74,6 +100,7 @@ probably not for the latter. but what if we added another individual?
 
 The second example would be an example where population structure and phenotype are perfectly correlated.this makes it inpossible to disentangle the two. however, we could rescue the study by increasing the diversity of our panel
 
+##### 2.2
 For real-world populations and quantitative traits however, even partial population structure can be very problematic, and lead to a lot of false positive associations. To have a closer look at this, we are going to work with a simulated dataset where we know the exact nature of the population structure.
 
 We have stored the data in a .Rdata file, which you can get here:
@@ -147,6 +174,7 @@ plot_qq(pval_ori,20000) # 20000 is the numbers of markers
 As you can see, the pvalues of our association are much higher than expected, which is due to the population structure.
 This can also be called genomic inflation, and a "genomic inflation factor" is sometimes calculated in order to correct this.
 
+###### 2.3
 Instead, we are going to redo the association while correcting for the population structure:
 
 ```R
