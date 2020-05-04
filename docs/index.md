@@ -16,7 +16,7 @@ for our case & parameter space, we can estimate NCP like this:
 
 where
 *n* is the number of observations  
-![r^2](https://render.githubusercontent.com/render/math?math=%20r%5E2%20) is the pairwise correlation between the causal marker and the genotyped marker.  
+r2 is the pairwise correlation between the causal marker and the genotyped marker.  
 *MAF* is the minor allele frequency, and  
 ![\beta](https://render.githubusercontent.com/render/math?math=%5Cbeta) is the effect size of an allele on the phenotype in standard deviation units.
 
