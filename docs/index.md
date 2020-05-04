@@ -29,7 +29,7 @@ where
 #### Exercise 1.2
   You're planning an exciting study on a physiologically relevant trait that for sure will be your breakthrough to fame and fortune!
   However, due to the dire funding situation you keep finding yourself in, you will have to be smart about the experimental setup.
-  based on similar studies on related traits as well as initial estimations of the heritability of your trait, you estimate that you need to be able to detect variants with a a minor allele frequency down to 0.25, that explain about 15% of the variance, i.e. having an effect size of about 0.02 standard deviations.
+  based on similar studies on related traits as well as initial estimations of the heritability of your trait, you estimate that you need to be able to detect variants with a a minor allele frequency down to 0.25, that explain about 14% of the observed phenotypical variance, i.e. having an effect size of about 0.02 standard deviations.
 
 ##### 1.2.1
   So far you've budgeted for phenotyping and genotyping of about 2000 individuals. Now, to your surprise, some departmental funding has come through.
@@ -43,5 +43,9 @@ where
 
 # Exercise 2: Population structure
 
+For the second exercise today, we are going to work with a simulated dataset containing some population structure. We will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it.
 
-# QQ-plots
+We have stored the data in a .Rdata file you can get here:
+<a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">Download FILE</a>
+
+# QQ-plots & Genomic inflation
