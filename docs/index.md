@@ -43,9 +43,85 @@ where
 
 # Exercise 2: Population structure
 
-For the second exercise today, we are going to work with a simulated dataset containing some population structure. We will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it.
+For the second exercise today, we will try to have a look at how population structure might skew your association results, how to identify it, and how one can correct for it. If the signal we are looking for is perfectly correlated with our population structure, it becomes impossible to disentangle the two. take this toy example of 4 individuals and 6 markers: can you disentangle the causative marker for the "diseased"-phenotype?
+
+![example1](figures/toy1.png)  
+![example2](figures/toy2.png)  
+
+probably not for the latter. but what if we added another individual?
+
+![example3](figures/toy3.png)
+
+The second example would be an example where population structure and phenotype are perfectly correlated, making it inpossible to disentangle the two, something that could be rescued by increasing the diversity of our panel
+
+For real-world populations and quantitative traits however, even partial population structure can be very problematic, and lead to a lot of false positive associations. For this, we are going to work with a simulated dataset where we know the exact nature of the population structure.
 
 We have stored the data in a .Rdata file you can get here:
 <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">Download FILE</a>
+
+
+It contains a simple 500 x 2003 dataframe (you can check these things with ```dim()```!)
+with 500 samples, 2k markers and one "ID", "phenotype" and "relatedness" column.
+
+using this dataset, we can use a very simple linear model to do an association analysis:
+
+```R
+
+### phe1 is the phenotype, relatedness is used to correct population structure.
+load("gwas_pop_str_sim.RData")
+
+## trait values
+y<-gwas_pop_str_sim$phe1
+
+## how many markers
+m<-20000
+
+## Do association analysis without correcting for the population sturcture:
+
+pval_ori<- rep(NA,m)# to store p values
+for(l in 1:m){
+  pval_ori[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]))$coefficients[2,4]
+  }
+```
+we can then plot this as a manhattan plot ( -log10 of the pvalues) with a corrected significance threshold of 0.05/20000.
+
+```R
+library("ggplot2")
+pval_uncorrected <- data.frame(pval_ori) # make into dataframe
+
+# we are using a bonferroni correction, which is a very simple and stringent measure of correcting for multiple testing:
+significance_threshold = 0.05/20000
+
+ggplot(data=pval1)+
+  geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
+  geom_abline(, color='red', slope = 0, intercept =-log10(significance_threshold))
+
+```
+Do you have markers above the significance threshold? how many?
+
+
+One of the essential plots to do whenever checking the results of your association is a [Q-Q plot](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot), a quantile-quantile plot that plots the P-values against the expected probability distribution.
+
+We have added a function for this [here](../scripts/plot_QQ_function.R).
+you can either paste this into your R notebook/script or keep it as a separate file in your working directory and load the function with `` source("/path/to/plot_QQ_function.R")``
+
+either way, you can then plot them like so:
+```R
+plot_qq(pval_ori,20000)
+```
+As you can see, the pvalues of our association are much higher than expected, which is due to the population structure.
+This can also be called genomic inflation, and a "genomic inflation factor" is sometimes calculated in order to correct this.
+
+Instead, we are going to redo the association while correcting for the population structure:
+
+```R
+pval_cor<- rep(NA,m)# to store p values
+pop_str<-gwas_pop_str_sim$relatedness
+for(l in 1:m){
+  pval_cor[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]+pop_str))$coefficients[2,4]
+}
+```
+
+
 
 # QQ-plots & Genomic inflation
