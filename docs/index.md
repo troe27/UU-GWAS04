@@ -26,9 +26,6 @@
 
 <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">gwas_pop_str_sim.RData</a>
 
-<a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/scripts/plot_QQ_function.R">plot_QQ_function.R</a>.
-
-
 
 ## Exercise 1: Power Calculations
 
@@ -163,7 +160,7 @@ One of the essential plots to do whenever checking the results of your associati
 
 
 
-We have added a function for this here: <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/scripts/plot_QQ_function.R">plot_QQ_function.R</a>.
+We have added a function for this [here](/scripts/plot_QQ_function.R)
 you can either paste this into your R notebook/script or keep it as a separate file in your working directory and load the function with `` source("/path/to/plot_QQ_function.R")``
 
 either way, you can then plot it like so:
