@@ -266,7 +266,7 @@ for(l in 1:m){
 pval3 <- data.frame(pval_cor_sex)
 
 
-ggplot(data=pval1)+
+ggplot(data=pval_uncorrected)+
   #geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
   geom_abline(color='red', slope = 0, intercept = -log10(0.05/20000))+
   geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)+
