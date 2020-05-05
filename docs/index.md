@@ -122,7 +122,7 @@ We have stored the data in a .Rdata file, which you can get here:
 
 
 It contains a simple 500 x 2003 dataframe (you can check these things with ```dim()```!)
-with 500 samples, 2k markers and one "ID", "phenotype" and "relatedness" column.
+with 500 samples, 2k markers and one "phenotype" and "relatedness" and "sex" column.
 
 using this dataset, we can create a very simple linear model to do an association analysis between the genotypes and the phenotype:
 
@@ -222,6 +222,55 @@ pval2 <- data.frame(pval_cor)
 ggplot(data=pval1)+geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
    geom_abline(, color='red', slope = 0, intercept = -log10(0.05/20000))+  
    geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)
+
+```
+
+</p>
+</details>
+
+
+<br>
+<br>
+
+
+###### 2.4
+
+For a lot of traits, it also makes sense to control for the sex of the tested individuals. Can you redo the analysis, taking not only population structure but also sex into account?
+
+
+<details><summary>tips</summary>
+<p>
+
+- you will need to add sex to the linear model that tests each marker for association with the phenotype.
+whereas it before was ``phe1 ~ genotype + popstruc``,(phenotype as a function of genotype and population structure) you now have to add sex to the equation as well.
+
+</p>
+</details>
+
+
+<br>
+<br>
+
+
+<details><summary>tips</summary>
+<p>
+
+```R
+pval_cor_sex<- rep(NA,m)# to store p values
+pop_str<-gwas_pop_str_sim$relatedness
+sex <- gwas_pop_str_sim$sex
+for(l in 1:m){
+  pval_cor_sex[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]+pop_str+sex))$coefficients[2,4]
+}
+
+pval3 <- data.frame(pval_cor_sex)
+
+
+ggplot(data=pval1)+
+  #geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
+  geom_abline(color='red', slope = 0, intercept = -log10(0.05/20000))+
+  geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)+
+  geom_point(data=pval3, mapping=aes(y=-log10(pval_cor_sex), x=1:m),color='Blue', alpha=0.5)
 
 ```
 
