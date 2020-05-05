@@ -177,7 +177,7 @@ ggplot(data=pval1)+
 Do you have markers above the significance threshold? how many, and how are they distributed?
 
 
-One of the essential plots to do whenever checking the results of your association is a [Q-Q plot](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot), a quantile-quantile plot that plots the P-values against the expected probability distribution.
+One of the essential plots to do whenever checking the results of your association is a [Q-Q plot](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot), a quantile-quantile plot that plots the p-values against the expected probability distribution.
 
 
 
