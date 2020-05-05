@@ -23,7 +23,6 @@
 
  - Confounders: avoiding Type I errors arising from population structure
 
-# Downloads:
 
 <a id="raw-url" href="https://raw.githubusercontent.com/troe27/UU-GWAS04/master/data/gwas_pop_str_sim.RData">gwas_pop_str_sim.RData</a>
 
