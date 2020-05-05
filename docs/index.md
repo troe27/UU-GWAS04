@@ -160,7 +160,7 @@ pval_uncorrected <- data.frame(pval_ori) # make into dataframe
 # we are using a bonferroni correction, which is a very simple and stringent measure of correcting for multiple testing:
 significance_threshold = 0.05/20000
 
-ggplot(data=pval1)+
+ggplot(data=pval_uncorrected)+
   geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
   geom_abline(, color='red', slope = 0, intercept =-log10(significance_threshold))
 
