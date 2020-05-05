@@ -181,7 +181,7 @@ One of the essential plots to do whenever checking the results of your associati
 
 
 
-We have added a function for this [here](scripts/plot_QQ_function.R)
+We have added a function for this [here](../scripts/plot_QQ_function.R)
 you can either paste this into your R notebook/script or keep it as a separate file in your working directory and load the function with `` source("/path/to/plot_QQ_function.R")``
 
 either way, you can then plot it like so:
