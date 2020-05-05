@@ -11,10 +11,10 @@
 				- [1.2.2](#122)  
 				- [1.2.3](#123)  
 	- [Exercise 2: Population structure](#exercise-2-population-structure)  
-			- [2.1](#21)  
-			- [2.2](#22)  
-			- [2.3](#23)
-      - [2.4](#24)  
+  	- [2.1](#21)  
+  	- [2.2](#22)  
+  	- [2.3](#23)
+    - [2.4](#24)  
 
 <!-- /TOC -->
 ### Topics today:
@@ -236,7 +236,7 @@ ggplot(data=pval1)+geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='blac
 
 ###### 2.4
 
-For a lot of traits, it also makes sense to control for the sex of the tested individuals. Can you redo the analysis, taking not only population structure but also sex into account?
+For many traits, it also makes sense to control for the sex of the tested individuals. Can you redo the analysis, taking not only population structure but also sex into account?
 
 
 <details><summary>tips</summary>
