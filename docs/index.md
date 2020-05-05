@@ -10,10 +10,11 @@
 				- [1.2.1](#121)  
 				- [1.2.2](#122)  
 				- [1.2.3](#123)  
-		- [Exercise 2: Population structure](#exercise-2-population-structure)  
-				- [2.1](#21)  
-				- [2.2](#22)  
-				- [2.3](#23)  
+	- [Exercise 2: Population structure](#exercise-2-population-structure)  
+			- [2.1](#21)  
+			- [2.2](#22)  
+			- [2.3](#23)
+      - [2.4](#24)  
 
 <!-- /TOC -->
 ### Topics today:
