@@ -196,7 +196,9 @@ Do you see as many significant hits?
 ```R
 pval2 <- data.frame(pval_cor)
 
-ggplot(data=pval1)+geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+geom_abline(, color='red', slope = 0, intercept = -log10(0.05/20000))+geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)
+ggplot(data=pval1)+geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
+   geom_abline(, color='red', slope = 0, intercept = -log10(0.05/20000))+  
+   geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)
 
 ```
 
