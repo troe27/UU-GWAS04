@@ -127,6 +127,9 @@ for(l in 1:m){
   pval_ori[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]))$coefficients[2,4]
   }
 ```
+
+- Can you tell what the code does, line by line?
+
 we can then plot this as a manhattan plot ( -log10 of the pvalues) with a corrected significance threshold of 0.05/20000 as a horizontal line.
 
 
@@ -184,6 +187,9 @@ for(l in 1:m){
 plot_qq(pval_cor,20000)
 
 ```
+
+- can you tell how this linear model is different from the first one, from the code?
+
 when you plot the qqplot with the new p values, you can see that they are much more in line with the expected distribution, which is a sign that we successfully controlled for the population structure!
 
 What do you see when you plot the new pvalues on top of the old ones?
