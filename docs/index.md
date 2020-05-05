@@ -43,8 +43,25 @@ r2 is the pairwise correlation between the causal marker and the genotyped marke
 
 #### Exercise 1.1
   translate the equation into an R function!
-
   <details><summary>tips</summary>
+  <p>
+
+  ```R
+  function_name <- function(variableA, variableB, variableC){
+    output <- do_something.with(variableA, variableB, variableC)
+    return(output)
+  }
+  ```
+
+
+  </p>
+  </details>
+
+
+  <br>
+  <br>
+
+  <details><summary>more tips</summary>
   <p>
 
   ```R
