@@ -2,7 +2,7 @@
 
 ### phe1 is the phenotype, relatedness is used to correct population structure. 
 load("gwas_pop_str_sim.RData")
-source("plot_QQ_function.R")
+source("scripts/plot_QQ_function.R")
 ## trait values
 y<-gwas_pop_str_sim$phe1
 ## how many markers
@@ -13,7 +13,7 @@ for(l in 1:m){
   pval_ori[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]))$coefficients[2,4]
   } 
 ## plot manhattan plot without population structure
-par(mfrow=c(1,2))
+par(mfrow=c(1,1))
 plot(1:m,-log10(pval_ori),xlab="Postions",ylab = "-log10(P)")
 abline(h=-log10(0.05/20000))## Bonferroni correction for pvalues, the most strengint one.
 ## question: (1) do you have markers with pvalues above the threshold ? (2) how many of them (3) how do they distribute?
@@ -21,7 +21,7 @@ abline(h=-log10(0.05/20000))## Bonferroni correction for pvalues, the most stren
 #load function by running: source("/path/to/plot_QQ_function.R")
 plot_qq(pval_ori,20000)
 
-#### put poppulation structure into your model
+#### put population structure into your model
 pval_cor<- rep(NA,m)# to store p values
 pop_str<-gwas_pop_str_sim$relatedness
 for(l in 1:m){
@@ -40,6 +40,20 @@ plot_qq(pval_cor,20000)
 ## is gender affecting 
 
 
+pval_cor_sex<- rep(NA,m)# to store p values
+pop_str<-gwas_pop_str_sim$relatedness
+sex <- gwas_pop_str_sim$sex
+for(l in 1:m){
+  pval_cor_sex[l] <- summary(lm(y~gwas_pop_str_sim[,(l+3)]+pop_str+sex))$coefficients[2,4]
+} 
+
+pval3 <- data.frame(pval_cor_sex)
+
+ggplot(data=pval1)+
+  #geom_point(mapping=aes(y=-log10(pval_ori), x=1:m),color='black', alpha=0.5)+
+  geom_abline(color='red', slope = 0, intercept = -log10(0.05/20000))+
+  geom_point(data=pval2, mapping=aes(y=-log10(pval_cor), x=1:m),color='red', alpha=0.5)+
+  geom_point(data=pval3, mapping=aes(y=-log10(pval_cor_sex), x=1:m),color='Blue', alpha=0.5)
 
 
 
