@@ -31,7 +31,7 @@
 
 When doing power calculations for GWAS, we can use [**NCP**, the noncentrality parameter](https://en.wikipedia.org/wiki/Noncentrality_parameter) as our measurement for statistical power. Without going much into detail, we can treat this parameter as an indicator for how likely it is that our planned analysis will be able to detect associated variants. It is Bounded between 0 and 1, corresponding to being able to detect zero and 100 % of all variants.
 
-for our **case & parameter space**, we can estimate **NCP** like this:  
+for our **case & parameter space**, we can **estimate** *NCP* like this:  
 
 ![equation for ncp](figures/NCP.png)
 
